@@ -6,29 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:id="@+id/password_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Protection activated"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        app:fontFamily="@font/amiko_semibold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/status_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:src="@drawable/ic_house"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/ic_house_error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_title" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/connection_error_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="Unable to connect to home\nsecurity device,\ncheck connection"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        app:fontFamily="@font/amiko_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_image" />
 
     <Button
         android:id="@+id/proceed"
@@ -36,15 +37,16 @@
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/background_button"
+        android:backgroundTint="@color/colorAccent"
         android:elevation="8dp"
         android:paddingStart="50dp"
         android:paddingEnd="50dp"
-        android:text="Deactivate"
+        android:text="reconnect"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:fontFamily="@font/amiko_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status_image" />
+        app:layout_constraintTop_toBottomOf="@+id/connection_error_msg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

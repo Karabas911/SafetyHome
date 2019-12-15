@@ -43,13 +43,30 @@
         android:label="users_fragment"
         tools:layout="@layout/users_fragment" />
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.karabynosh911.safetyhome.HomeFragment"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
-    <fragment
         android:id="@+id/messageFragment"
         android:name="com.karabynosh911.safetyhome.MessageFragment"
         android:label="message_fragment"
         tools:layout="@layout/message_fragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.karabynosh911.safetyhome.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_homeFragment_status_deactivated"
+            app:destination="@id/homeFragment_status_deactivated" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeFragment_status_error"
+            app:destination="@id/homeFragment_status_error" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment_status_deactivated"
+        android:name="com.karabynosh911.safetyhome.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_deactivated_fragment" />
+    <fragment
+        android:id="@+id/homeFragment_status_error"
+        android:name="com.karabynosh911.safetyhome.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_not_available_fragment" />
 </navigation>
