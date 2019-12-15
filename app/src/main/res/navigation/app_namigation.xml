@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_namigation"
+    app:startDestination="@id/authentication_fragment">
+
+    <fragment
+        android:id="@+id/authentication_fragment"
+        android:name="com.karabynosh911.safetyhome.AuthenticationFragment"
+        tools:layout="@layout/authentication_fragment">
+        <action
+            android:id="@+id/action_authentication_fragment_to_mainFragment"
+            app:destination="@id/main_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/password_fragment"
+        android:name="com.karabynosh911.safetyhome.PasswordFragment"
+        tools:layout="@layout/password_fragment">
+        <action
+            android:id="@+id/action_password_fragment_to_mainFragment"
+            app:destination="@id/main_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.karabynosh911.safetyhome.MainFragment"
+        android:label="Головний екран"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_main_fragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.karabynosh911.safetyhome.UsersFragment"
+        android:label="users_fragment"
+        tools:layout="@layout/users_fragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.karabynosh911.safetyhome.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.karabynosh911.safetyhome.MessageFragment"
+        android:label="message_fragment"
+        tools:layout="@layout/message_fragment" />
+</navigation>
