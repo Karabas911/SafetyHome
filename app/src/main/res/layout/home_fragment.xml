@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/password_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Protection activated"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        app:fontFamily="@font/amiko_semibold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeFragment">
 
-    <ImageView
-        android:id="@+id/status_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:src="@drawable/ic_house"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_title" />
+        <TextView
+            android:id="@+id/password_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Protection activated"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            app:fontFamily="@font/amiko_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/proceed"
+        <ImageView
+            android:id="@+id/status_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/ic_house"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_title" />
+
+        <Button
+        android:id="@+id/deactivate"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
@@ -47,4 +49,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status_image" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/activate"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:visibility="gone"
+            android:background="@drawable/background_button"
+            android:backgroundTint="#FA0505"
+            android:elevation="8dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:text="Activate"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:fontFamily="@font/amiko_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_image" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="262dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

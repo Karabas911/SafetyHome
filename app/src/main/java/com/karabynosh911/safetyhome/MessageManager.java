@@ -14,6 +14,8 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.io.UnsupportedEncodingException;
+
 public class MessageManager {
 
     private static final String TAG = "MessageManager";
@@ -39,6 +41,7 @@ public class MessageManager {
                 public void onSuccess(IMqttToken asyncActionToken) {
                     Log.d(TAG, "Client connection success");
                     subscribeToTopic(Topic.ALERT);
+                    subscribeToTopic(Topic.STATUS);
                     initCallback();
                 }
 
@@ -93,6 +96,16 @@ public class MessageManager {
         } catch (MqttException e) {
             e.printStackTrace();
             Log.d(TAG, "subscribeToTopic " + topic + ": exception");
+        }
+    }
+
+    public  void publishMessage(String topic, String msg){
+        try {
+            byte[] encodedPayload = msg.getBytes("UTF-8");
+            MqttMessage message = new MqttMessage(encodedPayload);
+            client.publish(topic, message);
+        } catch (UnsupportedEncodingException | MqttException e) {
+            e.printStackTrace();
         }
     }
 
