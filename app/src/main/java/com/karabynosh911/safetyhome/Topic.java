@@ -8,4 +8,5 @@ public class Topic {
 
     public static final String CHANGE_STATUS = "change_status";
 
+    public static final String GET_STATUS = "get_status";
 }

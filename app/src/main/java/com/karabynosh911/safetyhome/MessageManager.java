@@ -100,6 +100,9 @@ public class MessageManager {
     }
 
     public  void publishMessage(String topic, String msg){
+        if(client == null){
+            return;
+        }
         try {
             byte[] encodedPayload = msg.getBytes("UTF-8");
             MqttMessage message = new MqttMessage(encodedPayload);

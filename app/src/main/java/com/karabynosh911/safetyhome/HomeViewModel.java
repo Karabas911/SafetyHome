@@ -25,6 +25,7 @@ public class HomeViewModel extends ViewModel {
                 statusLiveData.setValue(Integer.valueOf(mqttMessage.message));
             }
         });
+        getStatus();
     }
 
     public void activateSecurity() {
@@ -33,5 +34,9 @@ public class HomeViewModel extends ViewModel {
 
     public void deactivateSecurity() {
         messageManager.publishMessage(Topic.CHANGE_STATUS, "2");
+    }
+
+    public void getStatus() {
+        messageManager.publishMessage(Topic.GET_STATUS,"GetHouseStatus");
     }
 }
